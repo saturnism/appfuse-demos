@@ -1,0 +1,18 @@
+version: '2.0'
+services:
+  web:
+    image: gcr.io/wise-coyote-827/appfuse-old
+    ports:
+    - "8080:8080"
+    depends_on:
+    - mysql
+    links:
+    - mysql
+  mysql:
+    build:
+      context: mysql/
+    ports:
+    - "3306:3306"
+    environment:
+    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    - MYSQL_DATABASE=struts2_crud

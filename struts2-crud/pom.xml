@@ -77,7 +77,6 @@
                     <useFullNames>false</useFullNames>
                 </configuration>
             </plugin>
-          <!--
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>hibernate3-maven-plugin</artifactId>
@@ -90,7 +89,6 @@
                             -->
                             <!-- Use 'jpaconfiguration' if your going the -Ddao.framework=jpa-hibernate route. -->
                             <!--<implementation>jpaconfiguration</implementation>-->
-            <!--
                         </component>
                     </components>
                     <componentProperties>
@@ -116,7 +114,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            -->
           <!--
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -519,6 +516,19 @@
             <artifactId>velocity</artifactId>
             <version>${velocity.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.codehaus.mojo.hibernate3</groupId>
+            <artifactId>maven-hibernate3-jdk14</artifactId>
+            <version>2.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.mojo.hibernate3</groupId>
+            <artifactId>maven-hibernate3-jdk15</artifactId>
+            <version>2.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <reporting>
@@ -822,10 +832,10 @@
         <!-- Database settings -->
         <dbunit.dataTypeFactoryName>org.dbunit.dataset.datatype.DefaultDataTypeFactory</dbunit.dataTypeFactoryName>
         <dbunit.operation.type>CLEAN_INSERT</dbunit.operation.type>
-        <hibernate.dialect>org.hibernate.dialect.MySQLInnoDBDialect</hibernate.dialect>
+        <hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
         <jdbc.groupId>mysql</jdbc.groupId>
         <jdbc.artifactId>mysql-connector-java</jdbc.artifactId>
-        <jdbc.version>5.0.5</jdbc.version>
+        <jdbc.version>5.1.1</jdbc.version>
         <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
         <jdbc.url><![CDATA[jdbc:mysql://mysql/struts2_crud?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8]]></jdbc.url>
         <jdbc.username>root</jdbc.username>
